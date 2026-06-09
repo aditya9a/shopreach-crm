@@ -1,0 +1,22 @@
+{
+  "name": "shopreach-server",
+  "version": "1.0.0",
+  "description": "ShopReach CRM Backend — AI-native Mini CRM for reaching shoppers",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/seed/seedData.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0",
+    "openai": "^6.42.0"
+  }
+}
