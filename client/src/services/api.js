@@ -13,7 +13,7 @@ import axios from 'axios';
 // Base URL for the CRM backend
 // In development: http://localhost:5000
 // In production: set via VITE_API_URL environment variable
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/+$/, '');
 
 const api = axios.create({
   baseURL: `${API_BASE}/api`,
