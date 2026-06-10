@@ -135,12 +135,12 @@ function Campaigns() {
     completed: 'badge-green',
   }[status] || 'badge-purple');
 
-  // Channel emoji
-  const channelEmoji = (ch) => ({
-    whatsapp: '💬',
-    sms: '📱',
-    email: '📧',
-  }[ch] || '📨');
+  // Channel label (no emojis)
+  const channelLabel = (ch) => ({
+    whatsapp: 'WA',
+    sms: 'SMS',
+    email: 'EM',
+  }[ch] || 'MSG');
 
   // Format date
   const formatDate = (date) => {
@@ -173,7 +173,7 @@ function Campaigns() {
       {/* Campaigns List */}
       {campaigns.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state-icon">📨</div>
+          <div className="empty-state-icon" style={{ fontSize: '36px', fontWeight: 700, color: 'var(--text-muted)' }}>--</div>
           <h3>No campaigns yet</h3>
           <p>Create your first campaign to engage your customers</p>
           <button className="btn btn-primary mt-16" onClick={() => setShowCreateModal(true)}>
@@ -190,7 +190,7 @@ function Campaigns() {
                   onClick={() => navigate(`/campaigns/${campaign._id}`)}
                 >
                   <div className="flex items-center gap-8" style={{ marginBottom: '4px' }}>
-                    <span style={{ fontSize: '20px' }}>{channelEmoji(campaign.channel)}</span>
+                    <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--purple-600)', background: 'var(--purple-glow)', padding: '2px 8px', borderRadius: 'var(--radius-sm)' }}>{channelLabel(campaign.channel)}</span>
                     <h3 style={{ fontSize: '16px', fontWeight: 600 }}>{campaign.name}</h3>
                     <span className={`badge ${statusBadge(campaign.status)}`}>{campaign.status}</span>
                   </div>
@@ -200,11 +200,11 @@ function Campaigns() {
                   </p>
                   {campaign.status !== 'draft' && (
                     <div className="flex gap-12" style={{ fontSize: '13px' }}>
-                      <span>📤 {campaign.stats?.sent || 0} sent</span>
-                      <span>✅ {campaign.stats?.delivered || 0} delivered</span>
-                      <span>❌ {campaign.stats?.failed || 0} failed</span>
-                      <span>👁️ {campaign.stats?.opened || 0} opened</span>
-                      <span>🖱️ {campaign.stats?.clicked || 0} clicked</span>
+                      <span>{campaign.stats?.sent || 0} sent</span>
+                      <span>{campaign.stats?.delivered || 0} delivered</span>
+                      <span>{campaign.stats?.failed || 0} failed</span>
+                      <span>{campaign.stats?.opened || 0} opened</span>
+                      <span>{campaign.stats?.clicked || 0} clicked</span>
                     </div>
                   )}
                 </div>
@@ -217,7 +217,7 @@ function Campaigns() {
                     disabled={sendingId === campaign._id}
                     style={{ marginLeft: '16px' }}
                   >
-                    {sendingId === campaign._id ? 'Sending...' : '🚀 Send'}
+                    {sendingId === campaign._id ? 'Sending...' : 'Send'}
                   </button>
                 )}
               </div>
@@ -279,7 +279,7 @@ function Campaigns() {
                     className={`btn btn-sm ${channel === ch ? 'btn-primary' : 'btn-secondary'}`}
                     onClick={() => setChannel(ch)}
                   >
-                    {channelEmoji(ch)} {ch.charAt(0).toUpperCase() + ch.slice(1)}
+                    {channelLabel(ch)} {ch.charAt(0).toUpperCase() + ch.slice(1)}
                   </button>
                 ))}
               </div>
@@ -303,7 +303,7 @@ function Campaigns() {
             {/* AI Message Generator */}
             <div className="card mb-24" style={{ background: 'var(--purple-glow)', borderColor: 'rgba(139,92,246,0.2)' }}>
               <div className="flex items-center gap-8 mb-8">
-                <span style={{ fontSize: '16px' }}>✨</span>
+                <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--purple-600)' }}>AI</span>
                 <h3 style={{ fontSize: '14px', fontWeight: 600 }}>AI Message Writer</h3>
               </div>
               <input
@@ -318,7 +318,7 @@ function Campaigns() {
                 onClick={handleAIGenerate}
                 disabled={aiGenerating || !selectedSegment}
               >
-                {aiGenerating ? 'Writing...' : '✨ Generate Message'}
+                {aiGenerating ? 'Writing...' : 'Generate Message'}
               </button>
             </div>
 
@@ -326,7 +326,7 @@ function Campaigns() {
             <div className="flex justify-between">
               <button className="btn btn-secondary" onClick={() => setShowCreateModal(false)}>Cancel</button>
               <button className="btn btn-primary" onClick={handleCreate} disabled={saving}>
-                {saving ? 'Creating...' : '📨 Create Campaign'}
+                {saving ? 'Creating...' : 'Create Campaign'}
               </button>
             </div>
           </div>

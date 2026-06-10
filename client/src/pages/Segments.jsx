@@ -223,7 +223,7 @@ function Segments() {
       {/* Segments List */}
       {segments.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state-icon">🎯</div>
+          <div className="empty-state-icon" style={{ fontSize: '36px', fontWeight: 700, color: 'var(--text-muted)' }}>--</div>
           <h3>No segments yet</h3>
           <p>Create your first segment to target specific customers</p>
           <button className="btn btn-primary mt-16" onClick={() => setShowCreateModal(true)}>
@@ -237,7 +237,7 @@ function Segments() {
               <div style={{ flex: 1 }}>
                 <div className="flex items-center gap-8" style={{ marginBottom: '4px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: 600 }}>{segment.name}</h3>
-                  {segment.createdByAI && <span className="badge badge-purple">✨ AI</span>}
+                  {segment.createdByAI && <span className="badge badge-purple">AI</span>}
                 </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '13px', marginBottom: '8px' }}>
                   {segment.description}
@@ -254,7 +254,7 @@ function Segments() {
                 onClick={() => handleDelete(segment._id)}
                 style={{ marginLeft: '16px', color: 'var(--rose-400)' }}
               >
-                🗑️
+                Delete
               </button>
             </div>
           ))}
@@ -273,7 +273,7 @@ function Segments() {
             {/* AI Natural Language Input */}
             <div className="card mb-24" style={{ background: 'var(--purple-glow)', borderColor: 'rgba(139,92,246,0.2)' }}>
               <div className="flex items-center gap-8 mb-16">
-                <span style={{ fontSize: '18px' }}>✨</span>
+                <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--purple-600)' }}>AI</span>
                 <h3 style={{ fontSize: '14px', fontWeight: 600 }}>AI Segment Builder</h3>
               </div>
               <div className="flex gap-8">
@@ -290,7 +290,7 @@ function Segments() {
                   disabled={aiLoading || !aiQuery.trim()}
                   style={{ whiteSpace: 'nowrap' }}
                 >
-                  {aiLoading ? '...' : '✨ Generate'}
+                  {aiLoading ? '...' : 'Generate'}
                 </button>
               </div>
             </div>
@@ -386,7 +386,7 @@ function Segments() {
                 onClick={handlePreview}
                 disabled={previewLoading}
               >
-                {previewLoading ? 'Loading...' : '👁️ Preview Audience'}
+                {previewLoading ? 'Loading...' : 'Preview Audience'}
               </button>
             </div>
 
@@ -411,7 +411,7 @@ function Segments() {
             <div className="flex justify-between mt-24">
               <button className="btn btn-secondary" onClick={() => setShowCreateModal(false)}>Cancel</button>
               <button className="btn btn-primary" onClick={handleSave} disabled={saving}>
-                {saving ? 'Saving...' : '✓ Save Segment'}
+                {saving ? 'Saving...' : 'Save Segment'}
               </button>
             </div>
           </div>

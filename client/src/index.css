@@ -1,12 +1,12 @@
 /* ============================================================
    ShopReach Design System
-   A premium dark-theme design system with purple/teal accents
+   A warm medium-tone design system with purple/teal accents
    
    DESIGN PHILOSOPHY:
-   - Dark mode as default (modern, easy on eyes, professional)
+   - Warm stone mid-tone background (balanced, professional, easy on eyes)
    - Purple primary accent (brand color — stands out, not generic)
    - Teal secondary (complements purple, used for success/positive states)
-   - Glassmorphism cards (frosted glass effect — premium feel)
+   - Frosted glass cards with subtle depth
    - Smooth micro-animations throughout
    ============================================================ */
 
@@ -15,48 +15,48 @@
 
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
-  /* Color Palette */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --bg-glass: rgba(255, 255, 255, 0.06);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(139, 92, 246, 0.5);
+  /* Color Palette — warm stone mid-tone */
+  --bg-primary: #c8c0b8;
+  --bg-secondary: #bfb7ae;
+  --bg-card: rgba(255, 255, 255, 0.35);
+  --bg-card-hover: rgba(255, 255, 255, 0.48);
+  --bg-glass: rgba(255, 255, 255, 0.30);
+  --border-color: rgba(0, 0, 0, 0.10);
+  --border-active: rgba(109, 40, 217, 0.50);
 
   /* Text */
-  --text-primary: #f1f1f3;
-  --text-secondary: #8b8b9e;
-  --text-muted: #5a5a6e;
+  --text-primary: #2d2a26;
+  --text-secondary: #5c574f;
+  --text-muted: #8a847b;
 
   /* Accent Colors */
-  --purple-400: #a78bfa;
-  --purple-500: #8b5cf6;
-  --purple-600: #7c3aed;
-  --purple-700: #6d28d9;
-  --purple-glow: rgba(139, 92, 246, 0.15);
+  --purple-400: #8b6cc7;
+  --purple-500: #7c3aed;
+  --purple-600: #6d28d9;
+  --purple-700: #5b21b6;
+  --purple-glow: rgba(124, 58, 237, 0.12);
   
-  --teal-400: #2dd4bf;
-  --teal-500: #14b8a6;
-  --teal-600: #0d9488;
+  --teal-400: #0fa895;
+  --teal-500: #0d9488;
+  --teal-600: #0a7a70;
   
-  --blue-400: #60a5fa;
-  --blue-500: #3b82f6;
+  --blue-400: #4b8fde;
+  --blue-500: #3b73c4;
   
-  --amber-400: #fbbf24;
-  --amber-500: #f59e0b;
+  --amber-400: #d99a06;
+  --amber-500: #b78305;
   
-  --rose-400: #fb7185;
-  --rose-500: #f43f5e;
+  --rose-400: #e04560;
+  --rose-500: #c8354e;
   
-  --green-400: #4ade80;
-  --green-500: #22c55e;
+  --green-400: #2fad56;
+  --green-500: #1d8a42;
 
   /* Gradients */
-  --gradient-purple: linear-gradient(135deg, #8b5cf6, #6d28d9);
-  --gradient-teal: linear-gradient(135deg, #14b8a6, #0d9488);
-  --gradient-sunset: linear-gradient(135deg, #f43f5e, #f59e0b);
-  --gradient-ocean: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --gradient-purple: linear-gradient(135deg, #7c3aed, #5b21b6);
+  --gradient-teal: linear-gradient(135deg, #0d9488, #0a7a70);
+  --gradient-sunset: linear-gradient(135deg, #c8354e, #b78305);
+  --gradient-ocean: linear-gradient(135deg, #3b73c4, #7c3aed);
 
   /* Spacing */
   --sidebar-width: 260px;
@@ -70,10 +70,10 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow-purple: 0 0 30px rgba(139, 92, 246, 0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.18);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -122,12 +122,12 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.25);
 }
 
 /* --- App Layout --- */
@@ -263,7 +263,7 @@ a:hover {
 
 .copilot-toggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.35);
 }
 
 .copilot-toggle.active {
@@ -351,7 +351,7 @@ a:hover {
 
 .copilot-message.user {
   background: var(--purple-glow);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.18);
   align-self: flex-end;
 }
 
@@ -362,7 +362,7 @@ a:hover {
 }
 
 .copilot-message.ai pre {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.06);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   overflow-x: auto;
@@ -453,7 +453,7 @@ a:hover {
 }
 
 .card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 0, 0, 0.14);
   background: var(--bg-card-hover);
 }
 
@@ -540,7 +540,7 @@ a:hover {
 
 .btn-secondary:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .btn-success {
@@ -645,7 +645,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -660,7 +660,7 @@ a:hover {
 }
 
 .data-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.03);
   color: var(--text-primary);
 }
 
@@ -676,33 +676,33 @@ a:hover {
 }
 
 .badge-purple {
-  background: rgba(139, 92, 246, 0.15);
-  color: var(--purple-400);
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--purple-600);
 }
 
 .badge-teal {
-  background: rgba(20, 184, 166, 0.15);
-  color: var(--teal-400);
+  background: rgba(13, 148, 136, 0.12);
+  color: var(--teal-600);
 }
 
 .badge-green {
-  background: rgba(34, 197, 94, 0.15);
-  color: var(--green-400);
+  background: rgba(29, 138, 66, 0.14);
+  color: var(--green-500);
 }
 
 .badge-amber {
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--amber-400);
+  background: rgba(183, 131, 5, 0.14);
+  color: var(--amber-500);
 }
 
 .badge-rose {
-  background: rgba(244, 63, 94, 0.15);
-  color: var(--rose-400);
+  background: rgba(200, 53, 78, 0.12);
+  color: var(--rose-500);
 }
 
 .badge-blue {
-  background: rgba(59, 130, 246, 0.15);
-  color: var(--blue-400);
+  background: rgba(59, 115, 196, 0.12);
+  color: var(--blue-500);
 }
 
 /* --- Delivery Funnel --- */
@@ -799,7 +799,7 @@ a:hover {
 }
 
 .condition-remove:hover {
-  background: rgba(244, 63, 94, 0.1);
+  background: rgba(200, 53, 78, 0.10);
 }
 
 .logic-toggle {
@@ -833,7 +833,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;

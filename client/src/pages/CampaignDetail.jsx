@@ -120,7 +120,7 @@ function CampaignDetail() {
   if (!campaign) {
     return (
       <div className="empty-state">
-        <div className="empty-state-icon">❌</div>
+        <div className="empty-state-icon" style={{ fontSize: '36px', fontWeight: 700, color: 'var(--text-muted)' }}>404</div>
         <h3>Campaign not found</h3>
         <button className="btn btn-primary mt-16" onClick={() => navigate('/campaigns')}>
           Back to Campaigns
@@ -156,32 +156,32 @@ function CampaignDetail() {
       {/* Stats Grid */}
       <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
         <div className="card stat-card blue">
-          <div className="stat-card-icon">📤</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--blue-500)' }}>SNT</div>
           <div className="stat-card-value">{stats.sent || 0}</div>
           <div className="stat-card-label">Sent</div>
         </div>
         <div className="card stat-card teal">
-          <div className="stat-card-icon">✅</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--teal-600)' }}>DLV</div>
           <div className="stat-card-value">{stats.delivered || 0}</div>
           <div className="stat-card-label">Delivered</div>
         </div>
         <div className="card stat-card rose">
-          <div className="stat-card-icon">❌</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--rose-500)' }}>FLD</div>
           <div className="stat-card-value">{stats.failed || 0}</div>
           <div className="stat-card-label">Failed</div>
         </div>
         <div className="card stat-card purple">
-          <div className="stat-card-icon">👁️</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--purple-600)' }}>OPN</div>
           <div className="stat-card-value">{stats.opened || 0}</div>
           <div className="stat-card-label">Opened</div>
         </div>
         <div className="card stat-card amber">
-          <div className="stat-card-icon">📖</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--amber-500)' }}>RD</div>
           <div className="stat-card-value">{stats.read || 0}</div>
           <div className="stat-card-label">Read</div>
         </div>
         <div className="card stat-card teal">
-          <div className="stat-card-icon">🖱️</div>
+          <div className="stat-card-icon" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--teal-600)' }}>CLK</div>
           <div className="stat-card-value">{stats.clicked || 0}</div>
           <div className="stat-card-label">Clicked</div>
         </div>
@@ -223,7 +223,7 @@ function CampaignDetail() {
           {/* AI Performance Summary */}
           <div className="card">
             <div className="flex justify-between items-center mb-16">
-              <h2 style={{ fontSize: '16px', fontWeight: 600 }}>✨ AI Insights</h2>
+              <h2 style={{ fontSize: '16px', fontWeight: 600 }}>AI Insights</h2>
               <button
                 className="btn btn-sm btn-primary"
                 onClick={handleAISummary}

@@ -78,25 +78,25 @@ function Dashboard() {
       {/* Stats Grid */}
       <div className="stats-grid">
         <div className="card stat-card purple" style={{ animationDelay: '0s' }}>
-          <div className="stat-card-icon">👥</div>
+          <div className="stat-card-icon" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--purple-600)' }}>CU</div>
           <div className="stat-card-value">{stats?.totalCustomers?.toLocaleString() || 0}</div>
           <div className="stat-card-label">Total Customers</div>
         </div>
 
         <div className="card stat-card teal" style={{ animationDelay: '0.1s' }}>
-          <div className="stat-card-icon">💰</div>
+          <div className="stat-card-icon" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--teal-600)' }}>REV</div>
           <div className="stat-card-value">{formatCurrency(stats?.totalRevenue || 0)}</div>
           <div className="stat-card-label">Total Revenue</div>
         </div>
 
         <div className="card stat-card blue" style={{ animationDelay: '0.2s' }}>
-          <div className="stat-card-icon">📨</div>
+          <div className="stat-card-icon" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--blue-500)' }}>CA</div>
           <div className="stat-card-value">{campaigns.length}</div>
           <div className="stat-card-label">Campaigns</div>
         </div>
 
         <div className="card stat-card amber" style={{ animationDelay: '0.3s' }}>
-          <div className="stat-card-icon">🎯</div>
+          <div className="stat-card-icon" style={{ fontSize: '22px', fontWeight: 700, color: 'var(--amber-500)' }}>SG</div>
           <div className="stat-card-value">{segments.length}</div>
           <div className="stat-card-label">Active Segments</div>
         </div>
@@ -115,7 +115,7 @@ function Dashboard() {
 
           {campaigns.length === 0 ? (
             <div className="empty-state" style={{ padding: '30px' }}>
-              <div className="empty-state-icon">📨</div>
+              <div className="empty-state-icon" style={{ fontSize: '36px', fontWeight: 700, color: 'var(--text-muted)' }}>No data</div>
               <h3>No campaigns yet</h3>
               <p style={{ fontSize: '13px' }}>Create your first campaign to reach your customers</p>
               <button className="btn btn-sm btn-primary mt-16" onClick={() => navigate('/campaigns')}>
@@ -158,13 +158,13 @@ function Dashboard() {
             <h2 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '16px' }}>Quick Actions</h2>
             <div className="flex flex-col gap-8">
               <button className="btn btn-secondary" onClick={() => navigate('/segments')} style={{ width: '100%', justifyContent: 'flex-start' }}>
-                🎯 Create a Segment
+                Create a Segment
               </button>
               <button className="btn btn-secondary" onClick={() => navigate('/campaigns')} style={{ width: '100%', justifyContent: 'flex-start' }}>
-                📨 Launch a Campaign
+                Launch a Campaign
               </button>
               <button className="btn btn-secondary" onClick={() => navigate('/customers')} style={{ width: '100%', justifyContent: 'flex-start' }}>
-                👥 Browse Customers
+                Browse Customers
               </button>
             </div>
           </div>

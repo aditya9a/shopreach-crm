@@ -9,19 +9,19 @@ function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Navigation items with emoji icons (no external icon library needed)
+  // Navigation items with text icons (no emojis)
   const navItems = [
-    { path: '/', icon: '📊', label: 'Dashboard' },
-    { path: '/customers', icon: '👥', label: 'Customers' },
-    { path: '/segments', icon: '🎯', label: 'Segments' },
-    { path: '/campaigns', icon: '📨', label: 'Campaigns' },
+    { path: '/', icon: '▦', label: 'Dashboard' },
+    { path: '/customers', icon: '⊞', label: 'Customers' },
+    { path: '/segments', icon: '◎', label: 'Segments' },
+    { path: '/campaigns', icon: '▷', label: 'Campaigns' },
   ];
 
   return (
     <aside className="sidebar">
       {/* Logo */}
       <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">☕</div>
+        <div className="sidebar-logo-icon">S</div>
         <div>
           <h1>ShopReach</h1>
           <span>BrewCraft CRM</span>

@@ -57,7 +57,7 @@ function App() {
             onClick={() => setCopilotOpen(true)}
             title="Open AI Copilot"
           >
-            ✨
+            AI
           </button>
         )}
       </div>

@@ -17,7 +17,7 @@ function AICopilot({ isOpen, onClose }) {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "👋 Hi! I'm your AI Campaign Copilot for BrewCraft. I can help you:\n\n• **Create segments** — Describe your audience in plain English\n• **Draft messages** — I'll write personalised marketing messages\n• **Analyse campaigns** — Ask about performance insights\n• **Strategy tips** — Get marketing recommendations\n\nTry: \"Find customers who spent more than ₹5000\"",
+      content: "Hi! I'm your AI Campaign Copilot for BrewCraft. I can help you:\n\n• **Create segments** — Describe your audience in plain English\n• **Draft messages** — I'll write personalised marketing messages\n• **Analyse campaigns** — Ask about performance insights\n• **Strategy tips** — Get marketing recommendations\n\nTry: \"Find customers who spent more than ₹5000\"",
     },
   ]);
   const [input, setInput] = useState('');
@@ -51,7 +51,7 @@ function AICopilot({ isOpen, onClose }) {
     } catch (error) {
       setMessages(prev => [...prev, {
         role: 'ai',
-        content: '❌ Sorry, I encountered an error. Please try again. Make sure the Gemini API key is configured.',
+        content: 'Sorry, I encountered an error. Please try again. Make sure the Gemini API key is configured.',
       }]);
     } finally {
       setLoading(false);
@@ -128,7 +128,7 @@ function AICopilot({ isOpen, onClose }) {
         style={{ display: isOpen ? 'none' : 'flex' }}
         title="Open AI Copilot"
       >
-        ✨
+        AI
       </button>
 
       {/* Copilot Panel */}
@@ -136,7 +136,7 @@ function AICopilot({ isOpen, onClose }) {
         {/* Header */}
         <div className="copilot-header">
           <h2>
-            ✨ AI Copilot
+            AI Copilot
             <span className="ai-badge">BETA</span>
           </h2>
           <button className="copilot-close" onClick={onClose}>✕</button>

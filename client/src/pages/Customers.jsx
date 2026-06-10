@@ -62,7 +62,7 @@ function Customers() {
 
       {/* Search Bar */}
       <div className="search-bar">
-        <span className="search-icon">🔍</span>
+        <span className="search-icon">⌕</span>
         <input
           type="text"
           placeholder="Search by name, email, or phone..."
@@ -76,7 +76,7 @@ function Customers() {
         <div className="loading-spinner"><div className="spinner"></div></div>
       ) : customers.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state-icon">👥</div>
+          <div className="empty-state-icon" style={{ fontSize: '36px', fontWeight: 700, color: 'var(--text-muted)' }}>--</div>
           <h3>No customers found</h3>
           <p>Try adjusting your search or seed some data</p>
         </div>
